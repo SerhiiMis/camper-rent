@@ -9,7 +9,7 @@ const CatalogPage = () => {
   return (
     <>
       <Helmet>
-        <title>Catalog</title>
+        <title>TravelTrucks - Catalog</title>
       </Helmet>
       <Container>
         <div className={styles.pageWrapper}>

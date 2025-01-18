@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   return (
     <Container>
       <Helmet>
-        <title>Page Not Found</title>
+        <title>TravelTrucks - Page Not Found</title>
       </Helmet>
       <div>
         <div className={styles.wrapper}>

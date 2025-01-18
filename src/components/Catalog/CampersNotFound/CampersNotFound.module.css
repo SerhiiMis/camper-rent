@@ -1,7 +1,5 @@
 .camperNotFoundWrapper {
   position: relative;
-  border-radius: 20px;
-  border: 1px solid var(--Gray-light);
   display: flex;
   justify-content: center;
 }

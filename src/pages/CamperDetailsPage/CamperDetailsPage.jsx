@@ -6,7 +6,7 @@ const CamperDetailsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Details</title>
+        <title>TravelTrucks - Details</title>
       </Helmet>
       <Container>
         <CamperDetails />

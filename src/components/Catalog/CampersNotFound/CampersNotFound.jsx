@@ -1,4 +1,4 @@
-import styles from "./CampersNorFound.module.css";
+import styles from "./CampersNotFound.module.css";
 import Image from "../../../assets/images/404-CampersNotFound.webp";
 
 const CampersNorFound = () => {

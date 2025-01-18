@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>TravelTrucks - Home</title>
       </Helmet>
       <Hero />;
     </>

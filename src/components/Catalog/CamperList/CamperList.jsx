@@ -1,15 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
-import LoadMoreBtn from '../../Buttons/LoadMoreBtn/LoadMoreBtn.jsx';
-import CamperCard from '../CamperCard/CamperCard.jsx';
-import styles from './CamperList.module.css';
-import { fetchCampers } from '../../../redux/campers/operations.js';
+import { useDispatch, useSelector } from "react-redux";
+import LoadMoreBtn from "../../Buttons/LoadMoreBtn/LoadMoreBtn.jsx";
+import CamperCard from "../CamperCard/CamperCard.jsx";
+import styles from "./CamperList.module.css";
+import { fetchCampers } from "../../../redux/campers/operations.js";
 import {
   selectError,
   selectTotalCampers,
-} from '../../../redux/campers/selectors.js';
-import CampersNorFound from '../CampersNorFound/CampersNorFound.jsx';
-import { selectFavorites } from '../../../redux/favorites/selectors.js';
-import { selectFilters } from '../../../redux/filters/selectors.js';
+} from "../../../redux/campers/selectors.js";
+import CampersNorFound from "../CampersNotFound/CampersNotFound.jsx";
+import { selectFavorites } from "../../../redux/favorites/selectors.js";
+import { selectFilters } from "../../../redux/filters/selectors.js";
 
 let limit = 4;
 let limitSequence = 4;
@@ -25,7 +25,7 @@ const CamperList = ({ campers }) => {
 
   const error = useSelector(selectError);
 
-  const isFavorite = camperId => favorites.includes(camperId);
+  const isFavorite = (camperId) => favorites.includes(camperId);
 
   const handleMore = () => {
     if (limit < totalCampers) {
@@ -40,7 +40,7 @@ const CamperList = ({ campers }) => {
         <CampersNorFound />
       ) : (
         <ul>
-          {campers.map(camper => (
+          {campers.map((camper) => (
             <CamperCard
               key={camper.id}
               camper={{ ...camper, favorite: isFavorite(camper.id) }}
