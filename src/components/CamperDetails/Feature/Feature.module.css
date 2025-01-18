@@ -1,0 +1,10 @@
+.featureSection {
+  display: flex;
+  width: 631px;
+  padding: 44px 44px;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  border-radius: 10px;
+  background-color: var(--Inputs);
+}

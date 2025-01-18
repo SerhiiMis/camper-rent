@@ -1,0 +1,12 @@
+.buttonStyle {
+  display: inline-block;
+  padding: 16px 16px;
+  border-radius: 200px;
+  background-color: var(--Button);
+  width: 166px;
+  transition: background-color var(--Animation_cubic);
+}
+
+.buttonStyle:hover {
+  background-color: var(--Button-Hover);
+}

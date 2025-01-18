@@ -1,0 +1,28 @@
+.buttonDisabled {
+  cursor: not-allowed;
+  background-color: var(--Gray-light);
+}
+
+.button {
+  display: inline-flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  border: 1px solid var(--Gray-light);
+  color: var(--Main);
+  background-color: var(--White);
+  margin-bottom: 40px;
+  transition: border-color var(--Animation_cubic);
+  align-self: center;
+  min-width: 145px;
+}
+
+.button:hover {
+  border-color: var(--Button-Hover);
+}
+
+.button:hover.buttonDisabled {
+  border-color: var(--Gray-light);
+}
