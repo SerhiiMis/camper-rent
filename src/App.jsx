@@ -3,18 +3,36 @@ import HomePage from "./pages/HomePage/HomePage";
 import CatalogPage from "./pages/CatalogPage/CatalogPage";
 import CamperDetailsPage from "./pages/CamperDetailsPage/CamperDetailsPage.jsx";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage.jsx";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/catalog/:id" element={<CamperDetailsPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <header>
+        <nav>
+          <div className="logo">
+            Travel<span>Trucks</span>
+          </div>
+          <ul className="nav-links">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/catalog">Catalog</Link>
+            </li>
+            <li>
+              <Link to="/favorites">Favorites</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/details/:id" element={<CamperDetailsPage />} />
+        </Routes>
+      </main>
     </Router>
   );
 }
