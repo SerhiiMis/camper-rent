@@ -1,0 +1,32 @@
+.camperCardFavorite {
+  cursor: pointer;
+  fill: var(--Main);
+}
+
+.camperCardFavorite.isActive {
+  fill: var(--Button);
+}
+
+.camperCardRating {
+  fill: var(--Badges);
+}
+.camperCardRating.isActive {
+  fill: var(--Rating);
+}
+
+.formAbsolute {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1;
+  margin-right: 8px;
+}
+.reviewStar {
+  color: aqua;
+}
+.starFilled {
+  fill: var(--Rating);
+}
+.starEmpty {
+  fill: var(--Badges);
+}

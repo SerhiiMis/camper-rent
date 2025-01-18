@@ -1,19 +1,14 @@
-import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import Hero from "../../components/Hero/Hero.jsx";
 
 const HomePage = () => {
   return (
-    <div
-      className="hero"
-      style={{ backgroundImage: "url('/images/hero-van-with-sunset.png')" }}
-    >
-      <div className="hero-text">
-        <h1>Campers of your dreams</h1>
-        <p>You can find everything you want in our catalog</p>
-        <Link to="/catalog" className="btn">
-          View Now
-        </Link>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+      <Hero />;
+    </>
   );
 };
 

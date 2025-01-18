@@ -1,39 +1,31 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import CatalogPage from "./pages/CatalogPage/CatalogPage";
-import CamperDetailsPage from "./pages/CamperDetailsPage/CamperDetailsPage.jsx";
-import FavoritesPage from "./pages/FavoritesPage/FavoritesPage.jsx";
+import { Route, Routes } from "react-router";
+import { ToastContainer } from "react-toastify";
+import SharedLayout from "./components/SharedLayout/SharedLayout.jsx";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage.jsx";
+import { lazy, Suspense } from "react";
+import Loader from "./components/Loader/Loader.jsx";
+import "react-toastify/dist/ReactToastify.css";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx"));
+const CamperDetailsPage = lazy(() =>
+  import("./pages/CamperDetailsPage/CamperDetailsPage.jsx")
+);
 
 function App() {
   return (
-    <Router>
-      <header>
-        <nav>
-          <div className="logo">
-            Travel<span>Trucks</span>
-          </div>
-          <ul className="nav-links">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/catalog">Catalog</Link>
-            </li>
-            <li>
-              <Link to="/favorites">Favorites</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="/details/:id" element={<CamperDetailsPage />} />
-        </Routes>
-      </main>
-    </Router>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="catalog/:id" element={<CamperDetailsPage />} />
+        </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <ToastContainer />
+    </Suspense>
   );
 }
 

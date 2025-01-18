@@ -1,25 +1,24 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import Catalog from "../../components/Catalog/Catalog.jsx";
+import Container from "../../components/Container/Container.jsx";
+import Filter from "../../components/Filter/Filter.jsx";
 
-function CatalogPage() {
-  useEffect(() => {
-    // Here you can fetch data for campers
-  }, []);
+import styles from "./CatalogPage.module.css";
 
+const CatalogPage = () => {
   return (
-    <div>
-      <h1>Catalog of Campers</h1>
-      {/* You will loop through campers here */}
-      <div>
-        <h2>Camper 1</h2>
-        <p>Details of the camper...</p>
-        <Link to="/catalog/1">
-          <button>Show more</button>
-        </Link>
-      </div>
-      <button>Load More</button>
-    </div>
+    <>
+      <Helmet>
+        <title>Catalog</title>
+      </Helmet>
+      <Container>
+        <div className={styles.pageWrapper}>
+          <Filter />
+          <Catalog />
+        </div>
+      </Container>
+    </>
   );
-}
+};
 
 export default CatalogPage;
