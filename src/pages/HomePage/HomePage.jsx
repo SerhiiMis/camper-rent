@@ -7,7 +7,7 @@ const HomePage = () => {
       <Helmet>
         <title>TravelTrucks - Home</title>
       </Helmet>
-      <Hero />;
+      <Hero />
     </>
   );
 };

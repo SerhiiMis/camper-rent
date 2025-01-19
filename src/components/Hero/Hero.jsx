@@ -1,6 +1,6 @@
-import Container from '../Container/Container.jsx';
-import styles from './Hero.module.css';
-import OpenPageBtn from '../Buttons/OpenPageBtn/OpenPageBtn.jsx';
+import Container from "../Container/Container.jsx";
+import styles from "./Hero.module.css";
+import OpenPageBtn from "../Buttons/OpenPageBtn/OpenPageBtn.jsx";
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
           </p>
           <OpenPageBtn
             className="heroBtn"
-            url={'/catalog'}
+            url={"/catalog"}
             ariaLabel="View the campers catalog"
           >
             View Now

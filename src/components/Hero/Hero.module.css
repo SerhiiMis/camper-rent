@@ -2,7 +2,9 @@
   background-image: url("../../assets/images/hero_1x.webp");
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 94px);
+  height: calc(100vh - 73px);
+  margin: 0;
+  padding: 0;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
